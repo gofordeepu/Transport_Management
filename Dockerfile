@@ -1,7 +1,5 @@
 FROM python:3.10-buster
-RUN addgroup app && adduser --system app 
-RUN adduser app app
-USER app
+RUN apt update && apt install wkhtmltopdf -y
 WORKDIR /app
 COPY . .
 RUN pip install -r requirements.txt
